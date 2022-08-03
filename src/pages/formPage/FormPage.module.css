@@ -1,0 +1,36 @@
+.container {
+    width: 600px;
+    height: 600px;
+    background-color: #f5aad9;
+    padding: 50px;
+}
+
+.theme {
+    font-size: 50px;
+    font-family: cursive;
+    color: mediumvioletred;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    width: 300px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 40%;
+    border: none;
+    padding: 10px;
+}
+
+.button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+}
