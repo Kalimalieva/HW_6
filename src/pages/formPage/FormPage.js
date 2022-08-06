@@ -9,7 +9,6 @@ function FormPage(props) {
         status: false
     });
 
-
     const changeInput = (e) => {
         setForm({
             ...form,
@@ -19,47 +18,55 @@ function FormPage(props) {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        if (!form.name === "" ||form.username === "" || form.gender === "" || form.status === ""){
-            alert("zapolnite polya")
+        if (!form.name.trim()) {
+            alert("Заполните поля Name")
         }
-        return changeInput(e)
-    }
+        if (!form.username.trim()) {
+            alert("zapolnite polya USERNAME")
+        }
+        if (!form.gender.trim()) {
+            alert("zapolnite polya GENDER")
+        }
 
-
-    const submit = () => {
+        return
         console.log(form)
     }
 
-    return (
-        <div className={classes.container}>
-            <h1 className={classes.theme}>регистр пользователя</h1>
-            <form onSubmit={onSubmit} className={classes.form}>
-                <input type="text"
-                       placeholder="name"
-                       name="name"
-                       onChange={changeInput}
-                       className={classes.input}/>
-                <input type="text"
-                       placeholder="username"
-                       name="username"
-                       onChange={changeInput}
-                       className={classes.input}/>
-                <select name="gender" onChange={changeInput} className={classes.input}>
-                    <option value=""> выберете пол</option>
-                    <option value="woman">мужчина</option>
-                    <option value="men">женщина</option>
-                </select>
-                семейное положение
-                <input type="radio"
-                       name="status"
-                       value="true"
-                       onChange={changeInput}
-                       className={classes.input}
-                />
-                <button className={classes.button} onClick={submit}>submit</button>
-            </form>
-        </div>
-    )
+
+const submit = () => {
+    console.log(form)
+}
+
+return (
+    <div className={classes.container}>
+        <h1 className={classes.theme}>регистр пользователя</h1>
+        <form onSubmit={onSubmit} className={classes.form}>
+            <input type="text"
+                   placeholder="name"
+                   name="name"
+                   onChange={changeInput}
+                   className={classes.input}/>
+            <input type="text"
+                   placeholder="username"
+                   name="username"
+                   onChange={changeInput}
+                   className={classes.input}/>
+            <select name="gender" onChange={changeInput} className={classes.input}>
+                <option value=""> выберете пол</option>
+                <option value="woman">мужчина</option>
+                <option value="men">женщина</option>
+            </select>
+            семейное положение
+            <input type="radio"
+                   name="status"
+                   value="true"
+                   onChange={changeInput}
+                   className={classes.input}
+            />
+            <button className={classes.button} onClick={submit}>submit</button>
+        </form>
+    </div>
+)
 
 }
 
